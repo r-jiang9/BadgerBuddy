@@ -6,4 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_my_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"/>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/searchview_round20"
+        android:focusable="true"
+        app:searchIcon="@drawable/common_google_signin_btn_icon_dark"
+        app:queryHint="Search Location"
+        app:iconifiedByDefault="false"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
