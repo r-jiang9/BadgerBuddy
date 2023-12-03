@@ -17,7 +17,7 @@
             android:id="@+id/textViewMyLists"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="My Lists"
+            android:text="My List"
             android:textSize="20dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp" />
@@ -28,16 +28,19 @@
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/buttonCreateList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/white"
+            android:clickable="true"
+            android:contentDescription="add_list"
+            android:onClick="onClickCreateList"
+            android:src="@android:drawable/ic_input_add" />
+
     </LinearLayout>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/buttonCreateList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:clickable="true"
-        android:src="@android:drawable/ic_input_add"
-        android:onClick="onClickCreateList"/>
 
 </FrameLayout>

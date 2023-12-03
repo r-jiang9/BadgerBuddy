@@ -17,10 +17,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-        android:layout_marginBottom="60dp"
-        android:layout_marginEnd="20dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"/>
+        android:src="@drawable/list_icon"
+        android:contentDescription="show_list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="80dp"
+        android:onClick="clickListButton"/>
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
@@ -28,10 +31,10 @@
         android:layout_height="40dp"
         android:background="@drawable/searchview_round20"
         android:focusable="true"
-        app:searchIcon="@drawable/common_google_signin_btn_icon_dark"
         app:queryHint="Search Location"
         app:iconifiedByDefault="false"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="25dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

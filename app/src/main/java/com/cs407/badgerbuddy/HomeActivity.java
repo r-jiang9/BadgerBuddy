@@ -1,6 +1,7 @@
 package com.cs407.badgerbuddy;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -54,6 +55,7 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //start app with splash screen
         SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
@@ -88,14 +90,14 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
             getCurrentLocation();
         }
 
-        // get current location when pressing the location button
-        floatingActionButtonMyLocation = findViewById(R.id.btn_my_location);
+        // get current location when pressing the location button - what is this for? (Jade)
+        /**floatingActionButtonMyLocation = findViewById(R.id.btn_my_location);
         floatingActionButtonMyLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getCurrentLocation();
             }
-        });
+        });**/
 
         searchView = findViewById(R.id.searchView);
         searchView.clearFocus();
@@ -135,6 +137,11 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
 
+    }
+
+    //go to ListActivity when clicking button
+    public void clickListButton(View view){
+        startActivity(new Intent(HomeActivity.this, ListActivity.class));
     }
 
     @Override
