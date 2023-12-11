@@ -1,6 +1,7 @@
 package com.cs407.badgerbuddy;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ public class BuildingFloorListAdapter extends BaseExpandableListAdapter {
     private Context context;
     private List<String> listDataHeader;
     private HashMap<String, Integer> listDataChild;
+    private HashMap<Integer, Boolean> isZoomed = new HashMap<>();
 
     public BuildingFloorListAdapter(Context context, List<String> listDataHeader,
                                     HashMap<String, Integer> listDataChild) {
@@ -75,7 +77,7 @@ public class BuildingFloorListAdapter extends BaseExpandableListAdapter {
 
         listTitleTextView.setText(headerTitle);
 
-        // for the backarrow to be on the right
+        // for the upper/down-arrow to be on the right
         groupIndicatorImageView.setImageResource(isExpanded ? R.drawable.baseline_expand_less_black : R.drawable.baseline_expand_more_black);
 
 
@@ -84,22 +86,29 @@ public class BuildingFloorListAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-        int imageResource = (Integer) getChild(groupPosition, childPosition);
+    public View getChildView(final int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
+        final int imageResource = (Integer) getChild(groupPosition, childPosition);
 
         if (convertView == null) {
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.build_floor_list_item, null);
         }
 
         ImageView expandedListImageView = convertView.findViewById(R.id.expandedListItem);
         expandedListImageView.setImageResource(imageResource);
-//        expandedListImageView.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
+
+        // Set the click listener to open the image in full-screen
+        expandedListImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Create an intent to start FullscreenImageActivity
+                Intent intent = new Intent(context, FullscreenImageActivity.class);
+                // Pass the image resource ID to the activity
+                intent.putExtra("imageResId", imageResource);
+                context.startActivity(intent);
+            }
+        });
+
         return convertView;
     }
 

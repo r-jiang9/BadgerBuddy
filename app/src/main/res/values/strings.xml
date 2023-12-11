@@ -4,4 +4,6 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="fullscreen_image_desc">Full screen image view</string>
+    <string name="back_button_desc">Go back</string>
 </resources>
