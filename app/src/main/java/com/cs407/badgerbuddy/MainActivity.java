@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
-    // 지속적으로 내 위치 업데이트 하기 위한 함수 : 앱 리소스 낭비가 있음.
+
     private void startLocationUpdates() {
         LocationRequest locationRequest = new LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 5000)
                 .setWaitForAccurateLocation(false)

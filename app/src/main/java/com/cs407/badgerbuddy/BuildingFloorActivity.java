@@ -43,10 +43,10 @@ public class BuildingFloorActivity extends AppCompatActivity {
                 finish();
             }
         });
-        // 데이터 초기화
+        // reset data
         initData();
 
-        // 어댑터 생성 및 설정
+        // create adapter
         expandableListView = findViewById(R.id.expandableListView);
         buildingFloorListAdapter = new BuildingFloorListAdapter(this, listDataHeader, listDataChild);
         expandableListView.setAdapter(buildingFloorListAdapter);
@@ -56,14 +56,14 @@ public class BuildingFloorActivity extends AppCompatActivity {
         listDataHeader = new ArrayList<>();
         listDataChild = new HashMap<>();
 
-        // 그룹 추가
+        // floorplans
         listDataHeader.add("Floor P");
         listDataHeader.add("Floor 1");
         listDataHeader.add("Floor 2");
         listDataHeader.add("Floor 3");
         listDataHeader.add("Floor 4");
 
-        // 하위 항목 추가
+        // image of floorplans
         listDataChild.put(listDataHeader.get(0), R.drawable.memu_basement);
         listDataChild.put(listDataHeader.get(1), R.drawable.memu_1);
         listDataChild.put(listDataHeader.get(2), R.drawable.memu_2);
