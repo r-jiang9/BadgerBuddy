@@ -14,7 +14,7 @@ import java.util.List;
 public class BuildingFloorListAdapter extends BaseExpandableListAdapter {
 
     private Context context;
-    private List<String> listDataHeader; // 그룹 항목
+    private List<String> listDataHeader;
     private HashMap<String, Integer> listDataChild;
 
     public BuildingFloorListAdapter(Context context, List<String> listDataHeader,
@@ -31,7 +31,7 @@ public class BuildingFloorListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        return 1; // 각 그룹당 하나의 하위 항목만 있음
+        return 1;
     }
 
     @Override
