@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class DisplayListModel {
     String listName; //name of floor plan list
-    ArrayList<FloorPlanModel> elements; //list of floor plan elements
+    ArrayList<String> elements; //list of floor plan elements
 
     //empty constructor
     public DisplayListModel(){
@@ -25,16 +25,12 @@ public class DisplayListModel {
         this.listName = listName;
     }
 
-    public void addElement(String listName, FloorPlanModel element){
-        if(listName.equals(this.listName)){
-            elements.add(element);
-        }
+    public void addElement(String address){
+            elements.add(address);
     }
 
-    public void removeElement(String listName, FloorPlanModel element){
-        if(listName.equals(this.listName)){
-            elements.remove(element);
-        }
+    public void removeElement(String address){
+            elements.remove(address);
     }
 
     public String getName(){

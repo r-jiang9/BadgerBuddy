@@ -1,8 +1,12 @@
 package com.cs407.badgerbuddy;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.ImageButton;
@@ -28,7 +32,7 @@ public class BuildingFloorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_building_floor);
 
         String title = getIntent().getStringExtra("title");
-        String address = getIntent().getStringExtra("address");
+        address = getIntent().getStringExtra("address");
 
         TextView tvTitle = findViewById(R.id.tv_title);
         TextView tvAddress = findViewById(R.id.tv_address);
@@ -36,13 +40,6 @@ public class BuildingFloorActivity extends AppCompatActivity {
         tvTitle.setText(title);
         tvAddress.setText(address);
 
-        ImageButton imageButton = findViewById(R.id.btn_back);
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
         // reset data
         initData();
 
@@ -69,5 +66,33 @@ public class BuildingFloorActivity extends AppCompatActivity {
         listDataChild.put(listDataHeader.get(2), R.drawable.memu_2);
         listDataChild.put(listDataHeader.get(3), R.drawable.memu_3);
         listDataChild.put(listDataHeader.get(4), R.drawable.memu_4);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.list_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu){
+        menu.clear();
+        for(int i=0; i<ListActivity.listElements.size(); i++){
+            menu.add(0, i, Menu.NONE, ListActivity.listElements.get(i).toString());
+        }
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        for(int i=0; i<ListActivity.listElements.size(); i++){
+            if(i == item.getItemId()){
+                //save address
+                ListActivity.listElements.get(i).addElement(address);
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

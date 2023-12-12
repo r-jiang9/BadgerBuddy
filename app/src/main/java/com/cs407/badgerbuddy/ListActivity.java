@@ -19,7 +19,7 @@ public class ListActivity extends AppCompatActivity {
     ListAdapter listAdapter;
     EditText listName;
     ActivityListBinding binding;
-    ArrayList<DisplayListModel> listElements = new ArrayList<>();
+    static ArrayList<DisplayListModel> listElements = new ArrayList<>();
     Button button;
 
     @Override

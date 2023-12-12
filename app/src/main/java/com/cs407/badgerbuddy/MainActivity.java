@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     //go to ListActivity when clicking button
     public void clickListButton(View view){
-        startActivity(new Intent(HomeActivity.this, ListActivity.class));
+        startActivity(new Intent(MainActivity.this, ListActivity.class));
     }
 
     @Override
