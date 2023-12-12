@@ -157,10 +157,22 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         LatLng defaultLocation = new LatLng(43.07534705141992, -89.40345285940056);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, 15));
 
-        MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(new LatLng(43.07630232892188, -89.40010886244517));
-        markerOptions.title("Memorial Union");
-        mMap.addMarker(markerOptions);
+        MarkerOptions markerOptions1 = new MarkerOptions();
+        markerOptions1.position(new LatLng(43.07630232892188, -89.40010886244517));
+        markerOptions1.title("Memorial Union");
+        mMap.addMarker(markerOptions1);
+
+        MarkerOptions markerOptions2 = new MarkerOptions();
+        markerOptions2.position(new LatLng(43.0726137, -89.4018355));
+        markerOptions2.title("Grainger Hall");
+        mMap.addMarker(markerOptions2);
+
+        //43.07542226943515, -89.39828122868525
+
+        MarkerOptions markerOptions3 = new MarkerOptions();
+        markerOptions3.position(new LatLng(43.07542226943515, -89.39828122868525));
+        markerOptions3.title("Memorial Library");
+        mMap.addMarker(markerOptions3);
 
         mMap.setOnMarkerClickListener(this);
     }
