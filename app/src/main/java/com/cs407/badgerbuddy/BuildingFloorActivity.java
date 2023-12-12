@@ -25,13 +25,14 @@ public class BuildingFloorActivity extends AppCompatActivity {
     private HashMap<String, Integer> listDataChild;
 
     private String address;
+    private String title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_building_floor);
 
-        String title = getIntent().getStringExtra("title");
+        title = getIntent().getStringExtra("title");
         address = getIntent().getStringExtra("address");
 
         TextView tvTitle = findViewById(R.id.tv_title);
@@ -121,7 +122,7 @@ public class BuildingFloorActivity extends AppCompatActivity {
         for(int i=0; i<ListActivity.listElements.size(); i++){
             if(i == item.getItemId()){
                 //save address
-                ListActivity.listElements.get(i).addElement(address);
+                ListActivity.listElements.get(i).addElement(title, address);
             }
         }
         return super.onOptionsItemSelected(item);

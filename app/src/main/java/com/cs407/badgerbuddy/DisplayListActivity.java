@@ -30,14 +30,16 @@ public class DisplayListActivity extends AppCompatActivity {
         String name = getIntent().getStringExtra("name");
         ArrayList<String> elements = (ArrayList<String>) getIntent().getSerializableExtra("elements");
         listName.setText(name);
+        ArrayList<String> titles = (ArrayList<String>) getIntent().getSerializableExtra("titles");
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, elements);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, titles);
         listView.setAdapter(arrayAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(DisplayListActivity.this, BuildingFloorActivity.class);
                 i.putExtra("address", elements.get(position));
+                i.putExtra("title", titles.get(position));
                 startActivity(i);
             }
         });

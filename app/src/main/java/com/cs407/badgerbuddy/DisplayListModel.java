@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class DisplayListModel {
     String listName; //name of floor plan list
     ArrayList<String> elements; //list of floor plan elements
+    ArrayList<String> titles; //list of building name elements
 
     //empty constructor
     public DisplayListModel(){
@@ -19,14 +20,16 @@ public class DisplayListModel {
     public DisplayListModel(String listName){
         this.listName = listName;
         this.elements = new ArrayList<>();
+        this.titles = new ArrayList<>();
     }
 
     public void setListName(String listName){
         this.listName = listName;
     }
 
-    public void addElement(String address){
-            elements.add(address);
+    public void addElement(String title, String address){
+        titles.add(title);
+        elements.add(address);
     }
 
     public void removeElement(String address){

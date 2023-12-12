@@ -39,6 +39,7 @@ public class ListActivity extends AppCompatActivity {
                 Intent i = new Intent(ListActivity.this, DisplayListActivity.class);
                 i.putExtra("name", listElements.get(position).listName);
                 i.putExtra("elements", listElements.get(position).elements);
+                i.putExtra("titles", listElements.get(position).titles);
                 startActivity(i);
             }
         });
