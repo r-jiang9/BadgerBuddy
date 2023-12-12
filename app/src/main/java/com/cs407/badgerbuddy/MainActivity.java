@@ -9,6 +9,7 @@ import androidx.core.splashscreen.SplashScreen;
 import androidx.cursoradapter.widget.SimpleCursorAdapter;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //start app with splash screen
         SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -94,14 +96,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             //getCurrentLocation();
         }
 
-        // get current location when pressing the location button
-        floatingActionButtonMyLocation = findViewById(R.id.btn_my_location);
+        // get current location when pressing the location button - what is this for? (Jade)
+        /**floatingActionButtonMyLocation = findViewById(R.id.btn_my_location);
         floatingActionButtonMyLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getCurrentLocation();
             }
-        });
+        });**/
 
 
 
@@ -142,6 +144,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     }
 
+    //go to ListActivity when clicking button
+    public void clickListButton(View view){
+        startActivity(new Intent(MainActivity.this, ListActivity.class));
+    }
+
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
@@ -156,7 +163,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.addMarker(markerOptions);
 
         mMap.setOnMarkerClickListener(this);
-
     }
 
 
