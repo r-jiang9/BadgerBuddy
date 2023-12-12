@@ -156,6 +156,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.addMarker(markerOptions);
 
         mMap.setOnMarkerClickListener(this);
+
     }
 
 

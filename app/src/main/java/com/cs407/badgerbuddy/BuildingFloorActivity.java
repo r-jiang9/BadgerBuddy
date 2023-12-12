@@ -3,6 +3,7 @@ package com.cs407.badgerbuddy;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.ImageButton;
@@ -56,18 +57,23 @@ public class BuildingFloorActivity extends AppCompatActivity {
         listDataHeader = new ArrayList<>();
         listDataChild = new HashMap<>();
 
-        // floorplans
-        listDataHeader.add("Floor P");
-        listDataHeader.add("Floor 1");
-        listDataHeader.add("Floor 2");
-        listDataHeader.add("Floor 3");
-        listDataHeader.add("Floor 4");
+        address = getIntent().getStringExtra("address");
+        Log.d("address",address);
+        if("800 Langdon St, Madison, WI 53703, USA".equals(address)){
+            // floorplans
+            listDataHeader.add("Floor P");
+            listDataHeader.add("Floor 1");
+            listDataHeader.add("Floor 2");
+            listDataHeader.add("Floor 3");
+            listDataHeader.add("Floor 4");
 
-        // image of floorplans
-        listDataChild.put(listDataHeader.get(0), R.drawable.memu_basement);
-        listDataChild.put(listDataHeader.get(1), R.drawable.memu_1);
-        listDataChild.put(listDataHeader.get(2), R.drawable.memu_2);
-        listDataChild.put(listDataHeader.get(3), R.drawable.memu_3);
-        listDataChild.put(listDataHeader.get(4), R.drawable.memu_4);
+            // image of floorplans
+            listDataChild.put(listDataHeader.get(0), R.drawable.memu_basement);
+            listDataChild.put(listDataHeader.get(1), R.drawable.memu_1);
+            listDataChild.put(listDataHeader.get(2), R.drawable.memu_2);
+            listDataChild.put(listDataHeader.get(3), R.drawable.memu_3);
+            listDataChild.put(listDataHeader.get(4), R.drawable.memu_4);
+        }
+
     }
 }
