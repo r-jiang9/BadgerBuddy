@@ -167,6 +167,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         markerOptions2.title("Grainger Hall");
         mMap.addMarker(markerOptions2);
 
+        //43.07542226943515, -89.39828122868525
+
+        MarkerOptions markerOptions3 = new MarkerOptions();
+        markerOptions3.position(new LatLng(43.07542226943515, -89.39828122868525));
+        markerOptions3.title("Memorial Library");
+        mMap.addMarker(markerOptions3);
+
         mMap.setOnMarkerClickListener(this);
     }
 

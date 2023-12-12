@@ -84,6 +84,19 @@ public class BuildingFloorActivity extends AppCompatActivity {
             listDataChild.put(listDataHeader.get(4), R.drawable.grainger_5);
 
         }
+        else if("701 Langdon St, Madison, WI 53706, USA".equals(address)){
+            listDataHeader.add("Floor B");
+            listDataHeader.add("Floor 1");
+            listDataHeader.add("Floor 2");
+            listDataHeader.add("Floor 3");
+            listDataHeader.add("Floor 4");
+
+            listDataChild.put(listDataHeader.get(0), R.drawable.memorial_b);
+            listDataChild.put(listDataHeader.get(1), R.drawable.memorial_1);
+            listDataChild.put(listDataHeader.get(2), R.drawable.memorial_2);
+            listDataChild.put(listDataHeader.get(3), R.drawable.memorial_3);
+            listDataChild.put(listDataHeader.get(4), R.drawable.memorial_4);
+        }
 
     }
 
