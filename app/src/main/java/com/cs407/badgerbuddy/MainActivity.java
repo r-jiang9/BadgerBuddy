@@ -88,8 +88,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST_CODE);
         } else {
-//            startLocationUpdates();
-            getCurrentLocation();
+//          startLocationUpdates();
+
+            //uncomment this and change the onMapReady to make it start in user location
+            //getCurrentLocation();
         }
 
         // get current location when pressing the location button
@@ -143,6 +145,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
+
+        // set default starting location
+        LatLng defaultLocation = new LatLng(43.07534705141992, -89.40345285940056);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, 15));
+
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(new LatLng(43.07630232892188, -89.40010886244517));
         markerOptions.title("Memorial Union");
