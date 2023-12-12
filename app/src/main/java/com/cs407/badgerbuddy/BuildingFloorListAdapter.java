@@ -77,8 +77,12 @@ public class BuildingFloorListAdapter extends BaseExpandableListAdapter {
 
         listTitleTextView.setText(headerTitle);
 
+
+
         // for the upper/down-arrow to be on the right
         groupIndicatorImageView.setImageResource(isExpanded ? R.drawable.baseline_expand_less_black : R.drawable.baseline_expand_more_black);
+
+
 
 
 

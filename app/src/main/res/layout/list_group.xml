@@ -20,4 +20,15 @@
         android:layout_height="40dp"
         android:layout_alignParentEnd="true"
         android:src="@drawable/baseline_expand_less_black" />
+
+    <ImageView
+        android:id="@+id/addtoMyList"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="20dp"
+        android:layout_toStartOf="@+id/groupIndicator"
+        android:src="@drawable/addicon" />
+
+
 </RelativeLayout>
