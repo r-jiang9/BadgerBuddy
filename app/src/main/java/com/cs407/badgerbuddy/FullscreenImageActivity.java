@@ -22,7 +22,7 @@ public class FullscreenImageActivity extends Activity {
         imageView.setImageResource(imageResId);
 
         // set up back button
-        ImageButton backButton = findViewById(R.id.back_button);
+        ImageButton backButton = findViewById(R.id.btn_back);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
