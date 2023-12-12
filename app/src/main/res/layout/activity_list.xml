@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,30 +18,35 @@
             android:id="@+id/textViewMyLists"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="My List"
-            android:textSize="20dp"
+            android:text="My Lists"
+            android:textSize="35dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/editTextListName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter list name"
+            android:layout_marginHorizontal="20dp"
+            android:textSize="25sp"/>
+
+        <Button
+            android:id="@+id/buttonMakeList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Make"
+            android:backgroundTint="@color/red"
+            android:layout_gravity="center"/>
 
         <ListView
             android:id="@+id/listViewMyLists"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/buttonCreateList"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:backgroundTint="@color/white"
-            android:clickable="true"
-            android:contentDescription="add_list"
-            android:onClick="onClickCreateList"
-            android:src="@android:drawable/ic_input_add" />
+            android:layout_weight="1"
+            tools:listitem="@layout/list_item"/>
 
     </LinearLayout>
 
 </FrameLayout>
+</layout>

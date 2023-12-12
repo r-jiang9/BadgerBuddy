@@ -10,21 +10,19 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextListName"
-        android:hint="Enter list name"
+        android:layout_marginTop="100dp"
+        android:textSize="30sp"
+        android:hint="Enter the list name"
         android:layout_gravity="center_horizontal"/>
 
     <Button
         android:id="@+id/buttonSave"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="50dp"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"
         android:onClick="onClickSave"/>
-    <Button
-        android:id="@+id/buttonBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:onClick="onClickBack"/>
 
 </LinearLayout>
