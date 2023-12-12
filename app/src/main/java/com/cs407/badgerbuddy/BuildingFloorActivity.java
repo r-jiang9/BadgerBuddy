@@ -70,6 +70,20 @@ public class BuildingFloorActivity extends AppCompatActivity {
             listDataChild.put(listDataHeader.get(3), R.drawable.memu_3);
             listDataChild.put(listDataHeader.get(4), R.drawable.memu_4);
         }
+        else if("975 University Ave, Madison, WI 53706, USA".equals(address)){
+            listDataHeader.add("Floor 1");
+            listDataHeader.add("Floor 2");
+            listDataHeader.add("Floor 3");
+            listDataHeader.add("Floor 4");
+            listDataHeader.add("Floor 5");
+
+            listDataChild.put(listDataHeader.get(0), R.drawable.grainger_1);
+            listDataChild.put(listDataHeader.get(1), R.drawable.grainger_2);
+            listDataChild.put(listDataHeader.get(2), R.drawable.grainger_3);
+            listDataChild.put(listDataHeader.get(3), R.drawable.grainger_4);
+            listDataChild.put(listDataHeader.get(4), R.drawable.grainger_5);
+
+        }
 
     }
 
